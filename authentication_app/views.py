@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.generics import GenericAPIView
 
-
 from authentication_app.serializers import RegisterSerializer, SchedulerUserSerializer
 from scheduler_APP.settings import EMAIL_HOST_USER
 
@@ -16,14 +15,12 @@ class RegisterAPI(GenericAPIView):
     serializer_class = RegisterSerializer
 
     def post(self, request):
-            serializer = self.get_serializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            user = serializer.save()
-            return Response(
-                {"User account is created": SchedulerUserSerializer(user, context=self.get_serializer_context()).data},
-                status=status.HTTP_201_CREATED)
-
-
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        return Response(
+            {"User account is created": SchedulerUserSerializer(user, context=self.get_serializer_context()).data},
+            status=status.HTTP_201_CREATED)
 
 
 class CreateToken(APIView):

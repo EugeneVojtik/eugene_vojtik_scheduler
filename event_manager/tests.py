@@ -19,6 +19,8 @@ class RestTest(APITestCase):
             email=self.email
         )
 
+    
+
     def test_get_event(self):
         url = reverse("create_token")
         data = {

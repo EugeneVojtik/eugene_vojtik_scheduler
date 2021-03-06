@@ -172,5 +172,6 @@ CELERY_BEAT_SCHEDULE = {
 
 }
 
+
 # Activate Django-Heroku
 django_heroku.settings(locals())
