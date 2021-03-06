@@ -28,7 +28,7 @@ SECRET_KEY = "rtb*w^093ygy%(2n_px8r!ky!dh^evcub7*3s+_%kc@7n2q=k^"
 
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['evgeniyvojtik-test-project.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['scheduler-reminder-app.herokuapp.com/', '127.0.0.1']
 # ALLOWED_HOSTS = ['127.0.0.1:6379', '127.0.0.1']
 
 # Application definition
