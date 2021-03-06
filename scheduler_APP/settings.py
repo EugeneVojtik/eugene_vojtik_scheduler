@@ -155,9 +155,9 @@ REMIND_OPTIONS = [
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = 'lanser03051996@gmail.com'
+EMAIL_HOST_USER = 'evtestingemail@gmail.com'
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_PASSWORD = "8637289zhenya"
+EMAIL_HOST_PASSWORD = "testtest1234567"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
