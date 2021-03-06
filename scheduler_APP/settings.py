@@ -14,7 +14,7 @@ import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,10 +26,9 @@ SECRET_KEY = "rtb*w^093ygy%(2n_px8r!ky!dh^evcub7*3s+_%kc@7n2q=k^"
 # DEBUG = True
 
 
-DEBUG = config('DEBUG', cast=bool, default=True)
+DEBUG = config('DEBUG', cast=bool, default=False)
 
 ALLOWED_HOSTS = ['scheduler-reminder-app.herokuapp.com/', '127.0.0.1']
-# ALLOWED_HOSTS = ['127.0.0.1:6379', '127.0.0.1']
 
 # Application definition
 
@@ -138,11 +137,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
-# Extra places for collectstatic to find static files.
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AUTH_USER_MODEL = 'event_manager.SchedulerUser'
 
@@ -163,9 +158,6 @@ EMAIL_USE_TLS = True
 
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
-
-# REDIS_HOST = '0.0.0.0'
-# REDIS_PORT = '6379'
 
 CELERY_BROKER_URL = 'redis://:pdb2d30accd4ded711da61b429422c41f96cc719e0b20fd711c04fcbb473061bb@ec2-52-48-196-4.eu-west-1.compute.amazonaws.com:8529'
 CELERY_ACCEPT_CONTENT = ['application/json']
