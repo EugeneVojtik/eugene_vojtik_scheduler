@@ -10,7 +10,7 @@ from scheduler_APP.settings import EMAIL_HOST_USER
 def to_remind():
     events_set = Event.objects.filter(remind_option__isnull=False)
     for event in events_set:
-        current_time = pytz.UTC.localize(datetime.now() - timedelta(hours=3))
+        current_time = pytz.UTC.localize(datetime.now() + timedelta(hours=3))
         if event.time_to_remind <= current_time:
             subject = 'Upcoming event notification'
             message = f'Please be informed of upcoming event, details are below: \n' \
