@@ -4,7 +4,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from event_manager.models import Event, Holidays
-from event_manager.serializers import EventSerializer, HolidaySerializer, MonthSerializer
+from event_manager.serializers import EventSerializer, HolidaySerializer
 
 
 class CreateEvent(ListCreateAPIView):
@@ -45,7 +45,7 @@ class ChosenDateEvents(generics.ListAPIView):
 class MonthEvents(generics.ListAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    serializer_class = MonthSerializer
+    serializer_class = EventSerializer
     queryset = Event.objects.all()
 
     def get_queryset(self):

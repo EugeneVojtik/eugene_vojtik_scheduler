@@ -12,9 +12,3 @@ class HolidaySerializer(ModelSerializer):
     class Meta:
         model = Holidays
         fields = ('holiday', 'holiday_start', 'holiday_finish',)
-
-
-class MonthSerializer(ModelSerializer):
-    class Meta:
-        model = Event
-        fields = ['event_start', 'event']
